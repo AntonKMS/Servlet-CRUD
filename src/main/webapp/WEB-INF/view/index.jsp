@@ -18,7 +18,7 @@
         </tr>
         </thead>
         <tbody>
-            <c:forEach items="${cars}" var="car">
+            <c:forEach items="${parking}" var="car">
 
                 <tr>
                     <td>${car.modelCar}</td>

@@ -1,7 +1,6 @@
 package ru.exemple.servlet;
 
-import com.sun.deploy.net.HttpRequest;
-import ru.exemple.model.Parking;
+import ru.exemple.model.Car;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,14 +12,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class GetIndexServlet extends HttpServlet {
 
-    private List<Parking> listCar;
+    private List<Car> listCar;
 
     @Override
     public void init() throws ServletException {
         listCar = new CopyOnWriteArrayList<>();
-        listCar.add(new Parking(1,"Toyota Corolla"));
-        listCar.add(new Parking(2,"Suzuki Escudo"));
-        listCar.add(new Parking(3,"Nissan Juke"));
+        listCar.add(new Car("Toyota Corolla","B302НП27"));
+        listCar.add(new Car("Nissan Juke","В558НТ27"));
     }
 
     @Override
@@ -33,22 +31,23 @@ public class GetIndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        if(!requestIsValid(req)){
+        if(requestIsValid(req)){
+            final String modelCar = req.getParameter("model");
+            final String numberCar = req.getParameter("number");
+
+            listCar.add(new Car(modelCar,numberCar));
             doGet(req,resp);
         }
 
-        final String parkingSpace = req.getParameter("place");
-        final String modelCar = req.getParameter("car");
 
-        listCar.add(new Parking(Integer.parseInt(parkingSpace),modelCar));
         doGet(req,resp);
     }
 
     private boolean requestIsValid(final HttpServletRequest req){
-        final String parkingSpace = req.getParameter("place");
-        final String modelCar = req.getParameter("car");
+        final String modelCar = req.getParameter("model");
+        final String numberCar = req.getParameter("number");
 
-        return parkingSpace != null && parkingSpace.length() > 0 && parkingSpace.matches("[+]?\\d+")
-                    && modelCar != null && modelCar.length() > 0;
+        return modelCar != null && modelCar.length() > 0
+                    && numberCar != null && numberCar.length() > 0;// && modelCar.matches("[+]?\\d+");
     }
 }

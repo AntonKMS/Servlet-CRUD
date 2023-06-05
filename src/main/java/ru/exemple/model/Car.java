@@ -1,21 +1,13 @@
 package ru.exemple.model;
 
-public class Parking {
+public class Car {
 
-    private Integer parkingSpace;
     private String modelCar;
+    private String numberCar;
 
-    public Parking(Integer parkingSpace, String modelCar) {
-        this.parkingSpace = parkingSpace;
+    public Car(String modelCar, String numberCar) {
         this.modelCar = modelCar;
-    }
-
-    public Integer getParkingSpace() {
-        return parkingSpace;
-    }
-
-    public void setParkingSpace(Integer parkingSpace) {
-        this.parkingSpace = parkingSpace;
+        this.numberCar = numberCar;
     }
 
     public String getModelCar() {
@@ -24,6 +16,14 @@ public class Parking {
 
     public void setModelCar(String modelCar) {
         this.modelCar = modelCar;
+    }
+
+    public String getNumberCar() {
+        return numberCar;
+    }
+
+    public void setNumberCar(String numberCar) {
+        this.numberCar = numberCar;
     }
 
 }

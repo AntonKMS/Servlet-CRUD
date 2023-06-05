@@ -4,36 +4,33 @@
 <html lang="ru">
 <html>
 <head>
-    <title>
-        <h2>Car parking</h2>
-    </title>
+    <title>Car parking</title>
 </head>
 <body>
-<hr>
     <table border="1" cellpadding="5" >
         <caption>
             <h2>Список автомобилей</h2>
         </caption>
         <thead>
         <tr>
-            <th>Парковочное место</th>
             <th>Модель автомобиля</th>
+            <th>Гос. номер</th>
         </tr>
         </thead>
         <tbody>
             <c:forEach items="${cars}" var="car">
 
                 <tr>
-                    <td>${car.getParkingSpace()}</td>
-                    <td>${car.getModelCar()}</td>
+                    <td>${car.modelCar}</td>
+                    <td>${car.numberCar}</td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
     <h2>Добавить автомобиль</h2>
         <form method="post" action="">
-            <label><input type="number" name="place"></label>Место<br>
-            <label><input type="text" name="car"></label>Автомобиль<br>
+            <label><input type="text" name="model"></label>Модель<br>
+            <label><input type="text" name="number"></label>Гос. номер<br>
             <input type="submit" value="Ok" name="Ok"><br>
         </form>
 </body>

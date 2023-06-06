@@ -16,4 +16,14 @@
     <url-pattern>/index.jsp</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>addCarServlet</servlet-name>
+    <servlet-class>ru.exemple.servlet.AddCarServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addCarServlet</servlet-name>
+    <url-pattern>/add_car</url-pattern>
+  </servlet-mapping>
+
 </web-app>

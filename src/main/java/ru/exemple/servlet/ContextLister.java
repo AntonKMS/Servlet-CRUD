@@ -22,6 +22,8 @@ public class ContextLister implements ServletContextListener {
         cars = new ConcurrentHashMap<>();
         servletContext.setAttribute("cars",cars);
 
+        cars.put(1,new Car("sdfsdf","ssdfsdf"));
+
     }
 
     @Override

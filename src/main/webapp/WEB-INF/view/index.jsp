@@ -18,7 +18,7 @@
         </tr>
         </thead>
         <tbody>
-            <c:forEach items="${parking}" var="car">
+            <c:forEach items="${requestScope.cars}" var="car">
 
                 <tr>
                     <td>${car.modelCar}</td>
@@ -28,7 +28,7 @@
         </tbody>
     </table>
     <h2>Добавить автомобиль</h2>
-        <form method="post" action="">
+        <form method="post" action="/add_car">
             <label><input type="text" name="model"></label>Модель<br>
             <label><input type="text" name="number"></label>Гос. номер<br>
             <input type="submit" value="Ok" name="Ok"><br>

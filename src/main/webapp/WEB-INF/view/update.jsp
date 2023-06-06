@@ -1,16 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: a.shelekhov
-  Date: 05.06.2023
-  Time: 17:46
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<html lang="ru">
 <html>
 <head>
-    <title>Title</title>
+    <title>Update</title>
 </head>
 <body>
-
+    <div>Модель автомобиля: < value="${requestScope.car.modelCar}"></></div>
+    <div>Гос. знак: < value="${requestScope.car.numberCar}"></></div>
 </body>
 </html>

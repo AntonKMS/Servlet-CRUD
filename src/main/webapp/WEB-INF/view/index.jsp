@@ -28,10 +28,12 @@
         </tbody>
     </table>
     <h2>Добавить автомобиль</h2>
-        <form method="post" action="/add_car">
-            <label><input type="text" name="model"></label>Модель<br>
-            <label><input type="text" name="number"></label>Гос. номер<br>
-            <input type="submit" value="Ok" name="Ok"><br>
-        </form>
+    <form method="post" action="addcar">
+        <label><input type="text" name="model"></label>Модель<br>
+        <label><input type="text" name="number"></label>Гос. номер<br>
+        <input type="submit" value="Ok" name="Ok"><br>
+    </form>
+
+
 </body>
 </html>

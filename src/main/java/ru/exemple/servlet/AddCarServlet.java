@@ -4,6 +4,7 @@ import ru.exemple.model.Car;
 import ru.exemple.utils.Utils;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+//@WebServlet(urlPatterns = "/add")
 public class AddCarServlet extends HttpServlet {
     private Map<Integer, Car> cars;
     private AtomicInteger id;
@@ -25,7 +27,7 @@ public class AddCarServlet extends HttpServlet {
         }else {
             this.cars = (ConcurrentHashMap<Integer, Car>) cars;
         }
-        id = new AtomicInteger(1);
+        id = new AtomicInteger(2);
     }
 
     @Override

@@ -23,7 +23,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>addCarServlet</servlet-name>
-    <url-pattern>/add_car</url-pattern>
+    <url-pattern>/addcar</url-pattern>
   </servlet-mapping>
 
 </web-app>

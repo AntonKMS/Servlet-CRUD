@@ -26,4 +26,14 @@
     <url-pattern>/addcar</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>deleteCarServlet</servlet-name>
+    <servlet-class>ru.exemple.servlet.DeleteCarServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteCarServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+
 </web-app>

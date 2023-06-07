@@ -30,8 +30,9 @@ public class DeleteCarServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
 
         if(Utils.idIsNumber(req)){
+
             cars.remove(Integer.parseInt(req.getParameter("id")));
         }
-            resp.sendRedirect(req.getContextPath() + "/");
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }

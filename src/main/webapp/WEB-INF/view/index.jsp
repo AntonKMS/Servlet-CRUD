@@ -15,6 +15,8 @@
         <tr>
             <th>Модель автомобиля</th>
             <th>Гос. номер</th>
+            <th>Изменить</th>
+            <th>Удалить</th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +25,17 @@
                 <tr>
                     <td>${car.modelCar}</td>
                     <td>${car.numberCar}</td>
+                    <td><form method="post" action="delete">
+
+                        <input type="submit" name="Ok" value="delete">
+                        </form>
+
+
+
+
+
                 </tr>
+
             </c:forEach>
         </tbody>
     </table>

@@ -22,7 +22,8 @@ public class ContextLister implements ServletContextListener {
         cars = new ConcurrentHashMap<>();
         servletContext.setAttribute("cars",cars);
 
-        cars.put(1,new Car("sdfsdf","ssdfsdf"));
+        final Car car = Utils.createCar(1,"Nissan","В558НР27");
+        this.cars.put(car.getId(),car);
 
     }
 

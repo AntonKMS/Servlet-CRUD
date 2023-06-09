@@ -21,6 +21,14 @@ public class Utils {
                 && numberCar != null && numberCar.length() > 0;// && modelCar.matches("[+]?\\d+");
     }
 
+    public static Car createCar(final int id, final String modelCar,final String numberCar) {
+        Car car = new Car();
+        car.setId(id);
+        car.setModelCar(modelCar);
+        car.setNumberCar(numberCar);
+        return car;
+    }
+
     public static boolean idIsInvalid(final String id, Map<Integer, Car> repo){
         return !(id != null && id.matches("[+]?\\d+") && repo.get(Integer.parseInt(id)) != null);
     }

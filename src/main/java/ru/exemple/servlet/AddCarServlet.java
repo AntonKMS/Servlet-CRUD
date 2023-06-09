@@ -38,8 +38,12 @@ public class AddCarServlet extends HttpServlet {
             final String modelCar = req.getParameter("model");
             final String numberCar = req.getParameter("number");
 
+            final Car car = new Car();
             final int id = this.id.getAndIncrement();
-            final Car car = new Car(modelCar,numberCar);
+            car.setId(id);
+            car.setModelCar(modelCar);
+            car.setNumberCar(numberCar);
+
             cars.put(id,car);
         }
 

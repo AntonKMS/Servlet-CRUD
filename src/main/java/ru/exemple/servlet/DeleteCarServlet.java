@@ -29,10 +29,13 @@ public class DeleteCarServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
+
+
         if(Utils.idIsNumber(req)){
 
             cars.remove(Integer.parseInt(req.getParameter("id")));
         }
+
         resp.sendRedirect(req.getContextPath() + "/");
     }
 }

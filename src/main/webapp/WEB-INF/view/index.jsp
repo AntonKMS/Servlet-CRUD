@@ -25,15 +25,15 @@
                 <tr>
                     <td>${car.modelCar}</td>
                     <td>${car.numberCar}</td>
-                    <td><form method="post" action="delete">
-
-                        <input type="submit" name="Ok" value="delete">
+                    <td>
+                        <a href="update?action=/update&id=${car.id}">Update</a>
+                    </td>
+                    <td>
+                        <form method="post" action="delete">
+                            <input type="number" hidden name="id" value="${car.id}"/>
+                            <input type="submit" name="delete" value="Delete"/>
                         </form>
-
-
-
-
-
+                    </td>
                 </tr>
 
             </c:forEach>

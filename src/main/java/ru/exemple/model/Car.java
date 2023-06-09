@@ -2,12 +2,16 @@ package ru.exemple.model;
 
 public class Car {
 
+    private int id;
     private String modelCar;
     private String numberCar;
 
     public Car(String modelCar, String numberCar) {
         this.modelCar = modelCar;
         this.numberCar = numberCar;
+    }
+    public Car(){
+
     }
 
     public String getModelCar() {
@@ -24,6 +28,14 @@ public class Car {
 
     public void setNumberCar(String numberCar) {
         this.numberCar = numberCar;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

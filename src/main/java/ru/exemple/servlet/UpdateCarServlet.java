@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class UpdateCarServlet extends HttpServlet {
+
     private Map<Integer, Car> cars;
 
     @Override
@@ -27,28 +28,33 @@ public class UpdateCarServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         req.setCharacterEncoding("UTF-8");
 
         final String id = req.getParameter("id");
         final String modelCar = req.getParameter("model");
         final String numberCar = req.getParameter("number");
 
-        cars.get(Integer.parseInt(id)).setModelCar(modelCar);
-        cars.get(Integer.parseInt(id)).setNumberCar(numberCar);
+        final Car car = cars.get(Integer.parseInt(id));
+            car.setModelCar(modelCar);
+            car.setNumberCar(numberCar);
+
 
         resp.sendRedirect(req.getContextPath() + "/");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         final String id = req.getParameter("id");
 
         if(Utils.idIsInvalid(id,cars)){
             resp.sendRedirect(req.getContextPath() + "/");
+           return;
         }
 
         final Car car = cars.get(Integer.parseInt(id));
-        req.setAttribute("cars",cars);
+        req.setAttribute("car",car);
 
         req.getRequestDispatcher("/WEB-INF/view/update.jsp").forward(req,resp);
     }

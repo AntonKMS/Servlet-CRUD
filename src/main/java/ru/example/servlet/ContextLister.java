@@ -1,7 +1,7 @@
-package ru.exemple.servlet;
+package ru.example.servlet;
 
-import ru.exemple.model.Car;
-import ru.exemple.utils.Utils;
+import ru.example.model.Car;
+import ru.example.utils.Utils;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;

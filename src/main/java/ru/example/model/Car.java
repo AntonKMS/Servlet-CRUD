@@ -1,4 +1,4 @@
-package ru.exemple.model;
+package ru.example.model;
 
 public class Car {
 

@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>getIndexServlet</servlet-name>
-    <servlet-class>ru.exemple.servlet.GetIndexServlet</servlet-class>
+    <servlet-class>ru.example.servlet.GetIndexServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -18,7 +18,7 @@
 
   <servlet>
     <servlet-name>addCarServlet</servlet-name>
-    <servlet-class>ru.exemple.servlet.AddCarServlet</servlet-class>
+    <servlet-class>ru.example.servlet.AddCarServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -28,7 +28,7 @@
 
   <servlet>
     <servlet-name>updateCarServlet</servlet-name>
-    <servlet-class>ru.exemple.servlet.UpdateCarServlet</servlet-class>
+    <servlet-class>ru.example.servlet.UpdateCarServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -38,7 +38,7 @@
 
   <servlet>
     <servlet-name>deleteCarServlet</servlet-name>
-    <servlet-class>ru.exemple.servlet.DeleteCarServlet</servlet-class>
+    <servlet-class>ru.example.servlet.DeleteCarServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>

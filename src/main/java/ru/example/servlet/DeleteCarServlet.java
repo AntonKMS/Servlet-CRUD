@@ -1,21 +1,18 @@
-package ru.exemple.servlet;
+package ru.example.servlet;
 
-import ru.exemple.model.Car;
-import ru.exemple.utils.Utils;
+import ru.example.model.Car;
+import ru.example.utils.Utils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArrayList;
 
-public class GetIndexServlet extends HttpServlet {
-
-    private Map<Integer,Car> cars;
+public class DeleteCarServlet extends HttpServlet {
+    private Map<Integer, Car> cars;
 
     @Override
     public void init() throws ServletException {
@@ -29,9 +26,16 @@ public class GetIndexServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("cars",cars.values());
-        req.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(req,resp);
-    }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
 
+
+
+        if(Utils.idIsNumber(req)){
+
+            cars.remove(Integer.parseInt(req.getParameter("id")));
+        }
+
+        resp.sendRedirect(req.getContextPath() + "/");
+    }
 }

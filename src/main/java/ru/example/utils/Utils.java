@@ -1,6 +1,6 @@
-package ru.exemple.utils;
+package ru.example.utils;
 
-import ru.exemple.model.Car;
+import ru.example.model.Car;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
